@@ -1,0 +1,14 @@
+<div>
+  <h2>Welcome to home page user {{ user }}</h2>
+
+  <br />
+  <button (click)="flago()">ADD</button>
+  <div *ngIf="flagos"><app-add-product></app-add-product></div>
+  <span *ngFor="let p of products">
+    <img src="{{ p.url }}" width="300px" height="300px" />
+    <span>{{ p.pname }} {{ p.price }}</span>
+    <input type="button" value="Buy" (click)="deleteProduct(p.pid)" />
+  </span>
+
+  <input type="button" value="logout" (click)="logout()" />
+</div>
